@@ -1,0 +1,57 @@
+AUREUM CUSTOMS - IMAGE MANAGEMENT GUIDE
+========================================
+
+This guide lists all images used across the AUREUM CUSTOMS website. 
+To replace any image, simply upload a new file with the SAME NAME to the corresponding folder.
+
+FOLDER STRUCTURE:
+/images/
+├── logo.png (Brand Logo)
+├── hero/
+│   ├── hero-bg.jpg (Homepage Hero Background - 1920x1080)
+│   └── hero-product.png (Homepage Hero Floating Product - 1200x1200px, Transparent PNG)
+├── products/
+│   ├── product-1.jpg (Signature Heavy Hoodie - 800x1000px)
+│   ├── product-2.jpg (Onyx Insulated Flask - 800x1000px)
+│   ├── product-3.jpg (Artisan Leather Journal - 800x1000px)
+│   ├── product-4.jpg (Slate Wireless Charger - 800x1000px)
+│   ├── product-5.jpg (Nomad Canvas Weekender - 800x1000px)
+│   ├── product-6.jpg (Structured Twill Cap - 800x1000px)
+│   ├── product-7.jpg (Premium Polo Shirt - 800x1000px)
+│   ├── product-8.jpg (Titanium Key Organizer - 800x1000px)
+│   ├── product-9.jpg (Ceramic Coffee Mug - 800x1000px)
+│   ├── product-10.jpg (Executive Desk Pad - 800x1000px)
+│   └── ... (Follow this pattern for all 45 products)
+├── categories/
+│   ├── apparel.jpg (Apparel Category Background - 800x1000px)
+│   ├── drinkware.jpg (Drinkware Category Background - 800x1000px)
+│   ├── office.jpg (Office Category Background - 800x1000px)
+│   ├── tech.jpg (Tech Category Background - 800x1000px)
+│   ├── bags.jpg (Bags Category Background - 800x1000px)
+│   └── outdoor.jpg (Outdoor Category Background - 800x1000px)
+├── corporate/
+│   ├── corporate-hero.jpg (Corporate Page Hero - 1200x1600px)
+│   ├── gift-set-starter.jpg (Executive Tech Set - 800x800px)
+│   ├── gift-set-premium.jpg (Wellness Welcome Kit - 800x800px)
+│   └── gift-set-executive.jpg (Artisan Coffee Set - 800x800px)
+├── team/
+│   ├── team-1.jpg (Sarah Al-Maktoum - 600x800px)
+│   ├── team-2.jpg (James Sterling - 600x800px)
+│   ├── team-3.jpg (Elena Rossi - 600x800px)
+│   └── team-4.jpg (Placeholder for 4th member - 600x800px)
+└── misc/
+    ├── about-banner.jpg (About Page Mission Image - 800x1000px)
+    ├── trust-badge.png (Trust Badge/Certification - 200x200px)
+    └── favicon.png (Website Favicon - 32x32px)
+
+RECOMMENDED DIMENSIONS:
+- Hero Images: 1920x1080px (JPG, compressed)
+- Product Images: 800x1000px (JPG, 4:5 aspect ratio)
+- Square Assets: 800x800px (JPG)
+- Logos/Icons: Transparent PNG or SVG
+
+INSTRUCTIONS FOR REPLACEMENT:
+1. Prepare your image with the recommended dimensions.
+2. Name the file exactly as listed above (e.g., 'product-1.jpg').
+3. Upload the file to the correct subfolder within '/images/'.
+4. The website will automatically update with the new image.

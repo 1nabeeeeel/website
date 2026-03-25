@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | AUREUM CUSTOMS - The Standard of Premium Merchandise</title>
+    <meta name="description" content="Discover the story behind AUREUM. We are redefining custom merchandise in the UAE through uncompromising quality, artisanal craftsmanship, and a commitment to brand excellence.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4" defer></script>
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <style>
+        @theme {
+            --color-gold: #C9A84C;
+            --color-gold-light: #E8C96A;
+            --color-cream: #F5F0E8;
+            --color-bg: #0A0A0A;
+            --color-surface: #141414;
+            --color-border: #2A2A2A;
+            --font-display: 'Clash Display', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
+
+        body {
+            background-color: #0A0A0A;
+            color: #F5F0E8;
+            font-family: 'DM Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .clash { font-family: 'Clash Display', sans-serif; }
+        
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            background-color: rgba(10, 10, 10, 0.8);
+        }
+
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/feTurbulence%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        .comparison-row:hover {
+            background-color: rgba(201, 168, 76, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="grain-overlay"></div>
+
+    <!-- Navigation -->
+    <nav id="main-nav" class="fixed top-0 left-0 w-full z-100 py-6 px-8 flex items-center justify-between nav-blur border-b border-border">
+        <a href="/" class="clash text-2xl font-bold text-gold tracking-tighter">AUREUM</a>
+        
+        <div class="hidden md:flex items-center space-x-12">
+            <a href="/catalog.html" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Products</a>
+            <a href="#" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Create</a>
+            <a href="/corporate.html" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Corporate</a>
+            <a href="/about.html" class="text-sm uppercase tracking-widest text-gold font-bold">About</a>
+            <a href="/contact.html" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Contact</a>
+        </div>
+
+        <div class="flex items-center space-x-6">
+            <button class="hidden md:block bg-gold text-bg px-6 py-2 text-sm font-bold uppercase tracking-widest sharp-edges">
+                Get a Quote
+            </button>
+            <button id="mobile-menu-toggle" class="md:hidden text-gold">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-48 pb-32 px-8 md:px-20 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="clash text-6xl md:text-9xl font-black tracking-tighter leading-none uppercase">Redefining <br><span class="text-gold">The Standard</span></h1>
+            <p class="mt-12 text-lg md:text-xl text-cream/70 leading-relaxed max-w-2xl mx-auto">
+                AUREUM was born from a simple observation: most custom merchandise is generic, low-quality, and forgettable. We believe your brand deserves better.
+            </p>
+        </div>
+    </header>
+
+    <!-- Stats Section -->
+    <section class="py-20 border-y border-border bg-surface">
+        <div class="max-w-7xl mx-auto px-8 md:px-20 grid grid-cols-2 md:grid-cols-4 gap-12">
+            <div class="text-center">
+                <span class="clash text-5xl md:text-7xl font-black text-gold block mb-2">500+</span>
+                <span class="text-[10px] uppercase tracking-[0.3em] text-cream/40">Brands Served</span>
+            </div>
+            <div class="text-center">
+                <span class="clash text-5xl md:text-7xl font-black text-gold block mb-2">12K+</span>
+                <span class="text-[10px] uppercase tracking-[0.3em] text-cream/40">Items Crafted</span>
+            </div>
+            <div class="text-center">
+                <span class="clash text-5xl md:text-7xl font-black text-gold block mb-2">48H</span>
+                <span class="text-[10px] uppercase tracking-[0.3em] text-cream/40">Fastest Delivery</span>
+            </div>
+            <div class="text-center">
+                <span class="clash text-5xl md:text-7xl font-black text-gold block mb-2">100%</span>
+                <span class="text-[10px] uppercase tracking-[0.3em] text-cream/40">Quality Guarantee</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-32 px-8 md:px-20">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-20">
+            <div class="w-full lg:w-1/2">
+                <div class="aspect-[4/5] bg-surface border border-border overflow-hidden">
+                    <img src="/images/misc/about-banner.jpg" alt="Craftsmanship" class="w-full h-full object-cover grayscale">
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2 space-y-10">
+                <h2 class="clash text-4xl md:text-6xl font-black tracking-tighter uppercase leading-tight">Our Mission: <br><span class="text-gold">Artisanal Branding</span></h2>
+                <p class="text-lg text-cream/70 leading-relaxed">
+                    We combine high-precision technology with artisanal attention to detail. Every stitch, every print, and every engravement is a reflection of our commitment to excellence. We don't just supply products; we build brand legacies.
+                </p>
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-6">
+                        <div class="w-12 h-12 border border-gold flex items-center justify-center shrink-0"><i data-lucide="zap" class="w-5 h-5 text-gold"></i></div>
+                        <div>
+                            <h4 class="clash text-xl font-bold uppercase tracking-tight">Uncompromising Quality</h4>
+                            <p class="text-sm text-cream/40 mt-2">We source only premium materials, from 450GSM cotton to medical-grade stainless steel.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-6">
+                        <div class="w-12 h-12 border border-gold flex items-center justify-center shrink-0"><i data-lucide="users" class="w-5 h-5 text-gold"></i></div>
+                        <div>
+                            <h4 class="clash text-xl font-bold uppercase tracking-tight">Human-Centric Design</h4>
+                            <p class="text-sm text-cream/40 mt-2">Our designers work closely with you to ensure your vision is translated perfectly onto every item.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="py-32 px-8 md:px-20 bg-surface border-y border-border">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="clash text-4xl md:text-6xl font-black tracking-tighter uppercase">Why AUREUM?</h2>
+                <p class="mt-4 text-cream/40 uppercase tracking-widest text-xs">The difference is in the details</p>
+            </div>
+
+            <div class="border border-border">
+                <div class="grid grid-cols-3 bg-bg border-b border-border py-6 px-8">
+                    <div class="text-[10px] uppercase tracking-widest text-cream/40">Feature</div>
+                    <div class="text-[10px] uppercase tracking-widest text-gold font-bold">AUREUM Customs</div>
+                    <div class="text-[10px] uppercase tracking-widest text-cream/40">Generic Suppliers</div>
+                </div>
+                <div class="comparison-row grid grid-cols-3 border-b border-border py-8 px-8 transition-colors">
+                    <div class="text-sm font-bold uppercase tracking-tight">Minimum Order</div>
+                    <div class="text-sm text-gold font-bold">0 Units</div>
+                    <div class="text-sm text-cream/40">50 - 100 Units</div>
+                </div>
+                <div class="comparison-row grid grid-cols-3 border-b border-border py-8 px-8 transition-colors">
+                    <div class="text-sm font-bold uppercase tracking-tight">Material Quality</div>
+                    <div class="text-sm text-gold font-bold">Premium / Luxury</div>
+                    <div class="text-sm text-cream/40">Standard / Economy</div>
+                </div>
+                <div class="comparison-row grid grid-cols-3 border-b border-border py-8 px-8 transition-colors">
+                    <div class="text-sm font-bold uppercase tracking-tight">Turnaround</div>
+                    <div class="text-sm text-gold font-bold">48 Hours - 7 Days</div>
+                    <div class="text-sm text-cream/40">14 - 21 Days</div>
+                </div>
+                <div class="comparison-row grid grid-cols-3 border-b border-border py-8 px-8 transition-colors">
+                    <div class="text-sm font-bold uppercase tracking-tight">Customization</div>
+                    <div class="text-sm text-gold font-bold">Artisanal / High-End</div>
+                    <div class="text-sm text-cream/40">Basic / Mass-Market</div>
+                </div>
+                <div class="comparison-row grid grid-cols-3 py-8 px-8 transition-colors">
+                    <div class="text-sm font-bold uppercase tracking-tight">Packaging</div>
+                    <div class="text-sm text-gold font-bold">Bespoke / Curated</div>
+                    <div class="text-sm text-cream/40">Standard Plastic</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-32 px-8 md:px-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div class="max-w-2xl">
+                    <h2 class="clash text-4xl md:text-6xl font-black tracking-tighter uppercase leading-tight">The Minds Behind <br><span class="text-gold">The Craft</span></h2>
+                </div>
+                <p class="text-cream/40 uppercase tracking-widest text-xs max-w-xs">A collective of designers, artisans, and logistics experts dedicated to your brand.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Team Member 1 -->
+                <div class="group">
+                    <div class="aspect-[3/4] bg-surface border border-border overflow-hidden relative">
+                        <img src="/images/team/team-1.jpg" alt="Team Member" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-bg to-transparent opacity-60"></div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="clash text-2xl font-bold uppercase tracking-tight">Sarah Al-Maktoum</h4>
+                        <p class="text-xs text-gold uppercase tracking-widest mt-2">Creative Director</p>
+                    </div>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="group">
+                    <div class="aspect-[3/4] bg-surface border border-border overflow-hidden relative">
+                        <img src="/images/team/team-2.jpg" alt="Team Member" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-bg to-transparent opacity-60"></div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="clash text-2xl font-bold uppercase tracking-tight">James Sterling</h4>
+                        <p class="text-xs text-gold uppercase tracking-widest mt-2">Head of Production</p>
+                    </div>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="group">
+                    <div class="aspect-[3/4] bg-surface border border-border overflow-hidden relative">
+                        <img src="/images/team/team-3.jpg" alt="Team Member" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-bg to-transparent opacity-60"></div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="clash text-2xl font-bold uppercase tracking-tight">Elena Rossi</h4>
+                        <p class="text-xs text-gold uppercase tracking-widest mt-2">Client Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-border pt-20 pb-10 px-8 md:px-20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+            <div>
+                <a href="/" class="clash text-3xl font-bold text-gold tracking-tighter">AUREUM</a>
+                <p class="mt-4 text-[10px] uppercase tracking-widest text-cream/40">© 2026 AUREUM CUSTOMS. ALL RIGHTS RESERVED.</p>
+            </div>
+            <div class="flex space-x-12 text-xs uppercase tracking-widest">
+                <a href="/catalog.html" class="hover:text-gold transition-colors">Products</a>
+                <a href="/corporate.html" class="hover:text-gold transition-colors">Corporate</a>
+                <a href="/contact.html" class="hover:text-gold transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>

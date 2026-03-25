@@ -1,11 +1,30 @@
-<div align="center">
+# AUREUM CUSTOMS - Premium Branding Partner
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+A high-end platform for custom merchandise and corporate gifting in the UAE.
 
-  <h1>Built with AI Studio</h2>
+## Image Management Structure
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+To ensure easy maintenance and consistency, all website images are centralized in the `/images` directory. This allows for quick replacement of any asset by simply swapping the file in the corresponding folder.
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+### Folder Hierarchy:
+- `/images/logo.png`: Main brand logo.
+- `/images/hero/`: Backgrounds and floating assets for hero sections.
+- `/images/products/`: All product photography (catalog, details, related items).
+- `/images/categories/`: Visuals for product category navigation.
+- `/images/corporate/`: Assets for corporate gifting and gift set previews.
+- `/images/team/`: Professional headshots for the team section.
+- `/images/misc/`: General banners, trust badges, and miscellaneous UI images.
 
-</div>
+For a detailed list of all images, recommended dimensions, and replacement instructions, please refer to [image-guide.txt](./image-guide.txt).
+
+## Tech Stack
+- HTML5
+- Tailwind CSS (Utility-first styling)
+- Lucide Icons (Iconography)
+- Vanilla JavaScript (Interactivity & Logic)
+
+## Features
+- **Product Catalog:** Paginated view of premium merchandise.
+- **Customization Engine:** Interactive product detail pages with customization options.
+- **Corporate Gifting:** Specialized portal for bulk orders and gift sets.
+- **Responsive Design:** Optimized for all devices with a dark luxury aesthetic.

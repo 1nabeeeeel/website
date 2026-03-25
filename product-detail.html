@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Heavy Hoodie | AUREUM CUSTOMS</title>
+    <meta name="description" content="Customize your Signature Heavy Hoodie. Premium 450GSM cotton, oversized fit, and professional-grade customization options.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4" defer></script>
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <style>
+        @theme {
+            --color-gold: #C9A84C;
+            --color-gold-light: #E8C96A;
+            --color-cream: #F5F0E8;
+            --color-bg: #0A0A0A;
+            --color-surface: #141414;
+            --color-border: #2A2A2A;
+            --font-display: 'Clash Display', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
+
+        body {
+            background-color: #0A0A0A;
+            color: #F5F0E8;
+            font-family: 'DM Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .clash { font-family: 'Clash Display', sans-serif; }
+        
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            background-color: rgba(10, 10, 10, 0.8);
+        }
+
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/feTurbulence%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        .tab-active {
+            color: #C9A84C;
+            border-bottom: 2px solid #C9A84C;
+        }
+
+        .color-swatch.active {
+            border: 2px solid #C9A84C;
+            padding: 2px;
+        }
+
+        .zoom-container {
+            overflow: hidden;
+            cursor: zoom-in;
+        }
+
+        .zoom-image {
+            transition: transform 0.3s ease-out;
+        }
+
+        .zoom-container:hover .zoom-image {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="grain-overlay"></div>
+
+    <!-- Navigation -->
+    <nav id="main-nav" class="fixed top-0 left-0 w-full z-100 py-6 px-8 flex items-center justify-between nav-blur border-b border-border">
+        <a href="/" class="clash text-2xl font-bold text-gold tracking-tighter">AUREUM</a>
+        
+        <div class="hidden md:flex items-center space-x-12">
+            <a href="/catalog.html" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Products</a>
+            <a href="#" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Create</a>
+            <a href="/corporate.html" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Corporate</a>
+            <a href="/about.html" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">About</a>
+            <a href="/contact.html" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Contact</a>
+        </div>
+
+        <div class="flex items-center space-x-6">
+            <button aria-label="Cart" class="hover:text-gold transition-colors relative">
+                <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                <span class="absolute -top-2 -right-2 bg-gold text-bg text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+            </button>
+            <button id="mobile-menu-toggle" class="md:hidden text-gold">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20 px-8 md:px-20 max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row gap-16">
+            <!-- Left Panel: Product Preview -->
+            <div class="w-full lg:w-1/2 space-y-6">
+                <div class="zoom-container aspect-[4/5] bg-surface border border-border">
+                    <img id="main-product-image" src="/images/products/product-1.jpg" alt="Signature Heavy Hoodie" class="zoom-image w-full h-full object-cover">
+                </div>
+                <div class="grid grid-cols-4 gap-4">
+                    <button onclick="updateMainImage(this.querySelector('img').src)" class="aspect-square border border-gold bg-surface overflow-hidden">
+                        <img src="/images/products/product-1.jpg" alt="Hoodie Front" class="w-full h-full object-cover">
+                    </button>
+                    <button onclick="updateMainImage(this.querySelector('img').src)" class="aspect-square border border-border bg-surface overflow-hidden hover:border-gold transition-colors">
+                        <img src="/images/products/product-1-back.jpg" alt="Hoodie Back" class="w-full h-full object-cover">
+                    </button>
+                    <button onclick="updateMainImage(this.querySelector('img').src)" class="aspect-square border border-border bg-surface overflow-hidden hover:border-gold transition-colors">
+                        <img src="/images/products/product-1-detail.jpg" alt="Hoodie Detail" class="w-full h-full object-cover">
+                    </button>
+                    <button onclick="updateMainImage(this.querySelector('img').src)" class="aspect-square border border-border bg-surface overflow-hidden hover:border-gold transition-colors">
+                        <img src="/images/products/product-1-lifestyle.jpg" alt="Hoodie Lifestyle" class="w-full h-full object-cover">
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Panel: Configuration -->
+            <div class="w-full lg:w-1/2 space-y-10">
+                <div>
+                    <p class="text-[10px] uppercase tracking-[0.4em] text-gold mb-2">Premium Apparel</p>
+                    <h1 class="clash text-5xl font-black tracking-tight uppercase">Signature Heavy Hoodie</h1>
+                    <div class="mt-4 flex items-center space-x-4">
+                        <p class="clash text-3xl font-bold text-gold">AED 245.00</p>
+                        <span class="text-xs text-cream/40 uppercase tracking-widest">Excl. Customization</span>
+                    </div>
+                </div>
+
+                <!-- Color Selection -->
+                <div>
+                    <h3 class="clash text-xs uppercase tracking-[0.3em] text-cream/60 mb-4">Select Color: <span id="selected-color-name" class="text-gold">Midnight Black</span></h3>
+                    <div class="flex space-x-3">
+                        <button onclick="selectColor('Midnight Black', '#141414')" class="color-swatch active w-8 h-8 rounded-full bg-[#141414] border border-border"></button>
+                        <button onclick="selectColor('Desert Sand', '#D2B48C')" class="color-swatch w-8 h-8 rounded-full bg-[#D2B48C] border border-border"></button>
+                        <button onclick="selectColor('Forest Green', '#2D4F1E')" class="color-swatch w-8 h-8 rounded-full bg-[#2D4F1E] border border-border"></button>
+                        <button onclick="selectColor('Slate Grey', '#708090')" class="color-swatch w-8 h-8 rounded-full bg-[#708090] border border-border"></button>
+                    </div>
+                </div>
+
+                <!-- Size Selection -->
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="clash text-xs uppercase tracking-[0.3em] text-cream/60">Select Size</h3>
+                        <button class="text-[10px] uppercase tracking-widest text-gold border-b border-gold">Size Guide</button>
+                    </div>
+                    <div class="grid grid-cols-5 gap-2">
+                        <button class="border border-border py-3 text-xs uppercase tracking-widest hover:border-gold transition-colors">S</button>
+                        <button class="border border-gold bg-gold text-bg py-3 text-xs uppercase tracking-widest font-bold">M</button>
+                        <button class="border border-border py-3 text-xs uppercase tracking-widest hover:border-gold transition-colors">L</button>
+                        <button class="border border-border py-3 text-xs uppercase tracking-widest hover:border-gold transition-colors">XL</button>
+                        <button class="border border-border py-3 text-xs uppercase tracking-widest hover:border-gold transition-colors">2XL</button>
+                    </div>
+                </div>
+
+                <!-- Customization Options -->
+                <div class="bg-surface border border-border p-8 space-y-8">
+                    <h3 class="clash text-lg font-bold uppercase tracking-tight text-gold">Customization Options</h3>
+                    
+                    <!-- Logo Upload -->
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-widest text-cream/60 mb-3">Upload Your Logo (AI, SVG, PNG)</label>
+                        <div class="border-2 border-dashed border-border p-6 text-center hover:border-gold transition-colors cursor-pointer group">
+                            <i data-lucide="upload-cloud" class="w-8 h-8 mx-auto text-cream/20 group-hover:text-gold transition-colors mb-2"></i>
+                            <p class="text-[10px] uppercase tracking-widest text-cream/40">Drag & drop or <span class="text-gold">browse</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Custom Text -->
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-widest text-cream/60 mb-3">Add Custom Text (Optional)</label>
+                        <input type="text" placeholder="ENTER TEXT HERE" class="w-full bg-bg border border-border px-4 py-3 text-xs uppercase tracking-widest focus:outline-none focus:border-gold">
+                    </div>
+
+                    <!-- Print Location -->
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest text-cream/60 mb-3">Print Location</label>
+                            <select class="w-full bg-bg border border-border px-4 py-3 text-[10px] uppercase tracking-widest focus:outline-none focus:border-gold cursor-pointer">
+                                <option>Left Chest</option>
+                                <option>Full Front</option>
+                                <option>Full Back</option>
+                                <option>Sleeve</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest text-cream/60 mb-3">Print Type</label>
+                            <select class="w-full bg-bg border border-border px-4 py-3 text-[10px] uppercase tracking-widest focus:outline-none focus:border-gold cursor-pointer">
+                                <option>Embroidery</option>
+                                <option>Screen Print</option>
+                                <option>DTF Transfer</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quantity & Price -->
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <div class="flex items-center border border-border">
+                        <button onclick="updateQty(-1)" class="px-4 py-3 hover:text-gold transition-colors"><i data-lucide="minus" class="w-4 h-4"></i></button>
+                        <input id="qty-input" type="number" value="1" min="1" class="w-16 bg-transparent text-center text-sm font-bold focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                        <button onclick="updateQty(1)" class="px-4 py-3 hover:text-gold transition-colors"><i data-lucide="plus" class="w-4 h-4"></i></button>
+                    </div>
+                    <button class="flex-1 bg-gold text-bg py-4 text-sm font-bold uppercase tracking-widest sharp-edges hover:bg-gold-light transition-colors w-full">
+                        Add to Cart — <span id="total-price">AED 245.00</span>
+                    </button>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="grid grid-cols-3 gap-4 pt-6 border-t border-border">
+                    <div class="text-center">
+                        <i data-lucide="truck" class="w-5 h-5 mx-auto text-gold mb-2"></i>
+                        <p class="text-[8px] uppercase tracking-widest text-cream/40">48hr Delivery</p>
+                    </div>
+                    <div class="text-center">
+                        <i data-lucide="shield-check" class="w-5 h-5 mx-auto text-gold mb-2"></i>
+                        <p class="text-[8px] uppercase tracking-widest text-cream/40">Premium Quality</p>
+                    </div>
+                    <div class="text-center">
+                        <i data-lucide="refresh-cw" class="w-5 h-5 mx-auto text-gold mb-2"></i>
+                        <p class="text-[8px] uppercase tracking-widest text-cream/40">No Minimums</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Below the Fold: Tabs -->
+        <div class="mt-32">
+            <div class="flex border-b border-border space-x-12 overflow-x-auto custom-scrollbar pb-px">
+                <button onclick="switchTab('description')" id="tab-description" class="tab-active pb-4 text-xs uppercase tracking-[0.3em] font-bold whitespace-nowrap">Description</button>
+                <button onclick="switchTab('guide')" id="tab-guide" class="pb-4 text-xs uppercase tracking-[0.3em] font-bold text-cream/40 hover:text-gold transition-colors whitespace-nowrap">Customization Guide</button>
+                <button onclick="switchTab('shipping')" id="tab-shipping" class="pb-4 text-xs uppercase tracking-[0.3em] font-bold text-cream/40 hover:text-gold transition-colors whitespace-nowrap">Shipping & Returns</button>
+                <button onclick="switchTab('reviews')" id="tab-reviews" class="pb-4 text-xs uppercase tracking-[0.3em] font-bold text-cream/40 hover:text-gold transition-colors whitespace-nowrap">Reviews (12)</button>
+            </div>
+
+            <div class="py-12 max-w-4xl">
+                <div id="content-description" class="tab-content space-y-6">
+                    <p class="text-cream/70 leading-relaxed">The Signature Heavy Hoodie is the pinnacle of our apparel collection. Crafted from 450GSM premium brushed-back cotton, it offers an unparalleled structured silhouette and superior warmth. Designed with an oversized fit and dropped shoulders for a modern, high-fashion aesthetic.</p>
+                    <ul class="space-y-3 text-sm text-cream/70">
+                        <li class="flex items-center space-x-3"><i data-lucide="check" class="w-4 h-4 text-gold"></i><span>100% Organic Cotton (450GSM)</span></li>
+                        <li class="flex items-center space-x-3"><i data-lucide="check" class="w-4 h-4 text-gold"></i><span>Double-lined hood with no drawstrings for a clean look</span></li>
+                        <li class="flex items-center space-x-3"><i data-lucide="check" class="w-4 h-4 text-gold"></i><span>Pre-shrunk and garment-dyed for lasting color</span></li>
+                        <li class="flex items-center space-x-3"><i data-lucide="check" class="w-4 h-4 text-gold"></i><span>Ribbed cuffs and hem with high-density stitching</span></li>
+                    </ul>
+                </div>
+                <div id="content-guide" class="tab-content hidden">
+                    <p class="text-cream/70 leading-relaxed">We use industry-leading techniques to ensure your brand looks its best. For this hoodie, we recommend Embroidery for a premium, textured feel or Screen Printing for bold, large-scale designs.</p>
+                </div>
+                <!-- Other content placeholders... -->
+            </div>
+        </div>
+
+        <!-- Related Products -->
+        <section class="mt-32">
+            <h2 class="clash text-3xl font-bold uppercase tracking-tight mb-12">Complete the Look</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-[4/5] bg-surface border border-border overflow-hidden">
+                        <img src="/images/products/product-6.jpg" alt="Heavyweight Joggers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="clash text-sm font-bold uppercase tracking-widest group-hover:text-gold transition-colors">Heavyweight Joggers</h4>
+                        <p class="text-xs text-gold mt-1">AED 195</p>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-[4/5] bg-surface border border-border overflow-hidden">
+                        <img src="/images/products/product-7.jpg" alt="Structured Cap" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="clash text-sm font-bold uppercase tracking-widest group-hover:text-gold transition-colors">Structured Cap</h4>
+                        <p class="text-xs text-gold mt-1">AED 95</p>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-[4/5] bg-surface border border-border overflow-hidden">
+                        <img src="/images/products/product-18.jpg" alt="Premium Crew Socks" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="clash text-sm font-bold uppercase tracking-widest group-hover:text-gold transition-colors">Premium Crew Socks</h4>
+                        <p class="text-xs text-gold mt-1">AED 45</p>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-[4/5] bg-surface border border-border overflow-hidden">
+                        <img src="/images/products/product-12.jpg" alt="Canvas Tote Bag" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="clash text-sm font-bold uppercase tracking-widest group-hover:text-gold transition-colors">Canvas Tote Bag</h4>
+                        <p class="text-xs text-gold mt-1">AED 65</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-border pt-20 pb-10 px-8 md:px-20">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+            <div class="md:col-span-1">
+                <a href="/" class="clash text-3xl font-bold text-gold tracking-tighter">AUREUM</a>
+                <p class="mt-6 text-sm text-cream/60 leading-relaxed">Elevating brand identity through premium custom merchandise and curated corporate gifting solutions in the UAE.</p>
+            </div>
+            <div>
+                <h4 class="clash text-xs uppercase tracking-[0.3em] text-gold mb-8">Shop</h4>
+                <ul class="space-y-4 text-sm uppercase tracking-widest">
+                    <li><a href="/catalog.html" class="hover:text-gold transition-colors">All Products</a></li>
+                    <li><a href="#" class="hover:text-gold transition-colors">Apparel</a></li>
+                    <li><a href="#" class="hover:text-gold transition-colors">Drinkware</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="clash text-xs uppercase tracking-[0.3em] text-gold mb-8">Company</h4>
+                <ul class="space-y-4 text-sm uppercase tracking-widest">
+                    <li><a href="/about.html" class="hover:text-gold transition-colors">About Us</a></li>
+                    <li><a href="/corporate.html" class="hover:text-gold transition-colors">Corporate Gifting</a></li>
+                    <li><a href="/contact.html" class="hover:text-gold transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="clash text-xs uppercase tracking-[0.3em] text-gold mb-8">Newsletter</h4>
+                <form class="flex">
+                    <input type="email" placeholder="EMAIL ADDRESS" class="bg-transparent border border-border px-4 py-3 text-xs w-full focus:outline-none focus:border-gold uppercase tracking-widest">
+                    <button class="bg-gold text-bg px-6 py-3 text-xs font-bold uppercase tracking-widest">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-10 border-t border-border flex justify-between items-center">
+            <p class="text-[10px] uppercase tracking-widest text-cream/40">© 2026 AUREUM CUSTOMS. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+
+        function updateMainImage(src) {
+            document.getElementById('main-product-image').src = src;
+            // Update active state on thumbnails
+            document.querySelectorAll('.grid button').forEach(btn => {
+                btn.classList.remove('border-gold');
+                btn.classList.add('border-border');
+                if (btn.querySelector('img').src === src) {
+                    btn.classList.add('border-gold');
+                    btn.classList.remove('border-border');
+                }
+            });
+        }
+
+        function selectColor(name, hex) {
+            document.getElementById('selected-color-name').innerText = name;
+            document.querySelectorAll('.color-swatch').forEach(swatch => {
+                swatch.classList.remove('active');
+                if (swatch.style.backgroundColor === hex || swatch.getAttribute('onclick').includes(name)) {
+                    swatch.classList.add('active');
+                }
+            });
+        }
+
+        function updateQty(delta) {
+            const input = document.getElementById('qty-input');
+            let val = parseInt(input.value) + delta;
+            if (val < 1) val = 1;
+            input.value = val;
+            
+            // Update total price (mock calculation)
+            const basePrice = 245;
+            document.getElementById('total-price').innerText = `AED ${(basePrice * val).toFixed(2)}`;
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
+            document.getElementById(`content-${tabId}`).classList.remove('hidden');
+            
+            document.querySelectorAll('button[id^="tab-"]').forEach(btn => {
+                btn.classList.remove('tab-active');
+                btn.classList.add('text-cream/40');
+            });
+            document.getElementById(`tab-${tabId}`).classList.add('tab-active');
+            document.getElementById(`tab-${tabId}`).classList.remove('text-cream/40');
+        }
+    </script>
+</body>
+</html>

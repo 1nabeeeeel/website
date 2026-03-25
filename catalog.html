@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<!-- 
+    IMAGE REFERENCE MAP:
+    /images/logo.png (Brand Logo)
+    /images/products/product-1.jpg (Signature Heavy Hoodie)
+    /images/products/product-2.jpg (Onyx Insulated Flask)
+    /images/products/product-3.jpg (Artisan Leather Journal)
+    /images/products/product-4.jpg (Slate Wireless Charger)
+    /images/products/product-5.jpg (Nomad Canvas Weekender)
+    /images/products/product-6.jpg (Structured Twill Cap)
+    /images/products/product-7.jpg (Premium Polo Shirt)
+    /images/products/product-8.jpg (Titanium Key Organizer)
+    /images/products/product-9.jpg (Ceramic Coffee Mug)
+    /images/products/product-10.jpg (Executive Desk Pad)
+    /images/products/product-11.jpg (Bluetooth ANC Headphones)
+    /images/products/product-12.jpg (Eco-Friendly Tote Bag)
+    /images/products/product-13.jpg (Minimalist Card Holder)
+    /images/products/product-14.jpg (Smart Water Bottle)
+    /images/products/product-15.jpg (Technical Windbreaker)
+    /images/products/product-16.jpg (Portable Power Bank)
+    /images/products/product-17.jpg (Bamboo Desk Organizer)
+    /images/products/product-18.jpg (Merino Wool Beanie)
+    /images/products/product-19.jpg (Leather Laptop Sleeve)
+    /images/products/product-20.jpg (Glass Infuser Bottle)
+    /images/products/product-21.jpg (Premium Yoga Mat)
+    /images/products/product-22.jpg (Stainless Steel Straw Set)
+    /images/products/product-23.jpg (Canvas Messenger Bag)
+    /images/products/product-24.jpg (Noise Isolating Earbuds)
+    /images/products/product-25.jpg (Customized Umbrella)
+    /images/products/product-26.jpg (Luxury Pen Set)
+    /images/products/product-27.jpg (Gym Duffel Bag)
+    /images/products/product-28.jpg (Adjustable Laptop Stand)
+    /images/products/product-29.jpg (Aromatic Candle Set)
+    /images/products/product-30.jpg (Microfiber Sports Towel)
+    /images/products/product-31.jpg (Premium Leather Belt)
+    /images/products/product-32.jpg (Desktop Humidifier)
+    /images/products/product-33.jpg (Wireless Mouse Pad)
+    /images/products/product-34.jpg (Enamel Pin Collection)
+    /images/products/product-35.jpg (Premium Duffel Bag)
+    /images/products/product-36.jpg (Signature Hoodie)
+    /images/products/product-37.jpg (Onyx Flask)
+    /images/products/product-38.jpg (Artisan Notebook)
+    /images/products/product-39.jpg (Slate Charger)
+    /images/products/product-40.jpg (Nomad Bag)
+    /images/products/product-41.jpg (Twill Cap)
+    /images/products/product-42.jpg (Polo Shirt)
+    /images/products/product-43.jpg (Key Organizer)
+    /images/products/product-44.jpg (Coffee Mug)
+    /images/products/product-45.jpg (Desk Pad)
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog | AUREUM CUSTOMS - Premium Merchandise</title>
+    <meta name="description" content="Browse our curated collection of premium custom merchandise. From high-end apparel to tech accessories, find the perfect canvas for your brand.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4" defer></script>
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <style>
+        @theme {
+            --color-gold: #C9A84C;
+            --color-gold-light: #E8C96A;
+            --color-cream: #F5F0E8;
+            --color-bg: #0A0A0A;
+            --color-surface: #141414;
+            --color-border: #2A2A2A;
+            --font-display: 'Clash Display', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
+
+        body {
+            background-color: #0A0A0A;
+            color: #F5F0E8;
+            font-family: 'DM Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .clash { font-family: 'Clash Display', sans-serif; }
+        
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            background-color: rgba(10, 10, 10, 0.8);
+        }
+
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/feTurbulence%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-card:hover .quick-add {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0A0A0A;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #C9A84C;
+        }
+    </style>
+</head>
+<body>
+    <div class="grain-overlay"></div>
+
+    <!-- Navigation -->
+    <nav id="main-nav" class="fixed top-0 left-0 w-full z-100 py-6 px-8 flex items-center justify-between nav-blur border-b border-border">
+        <a href="/" class="clash text-2xl font-bold text-gold tracking-tighter">AUREUM</a>
+        
+        <div class="hidden md:flex items-center space-x-12">
+            <a href="/catalog.html" class="text-sm uppercase tracking-widest text-gold font-bold">Products</a>
+            <a href="#" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Create</a>
+            <a href="/corporate.html" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Corporate</a>
+            <a href="/about.html" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">About</a>
+            <a href="/contact.html" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Contact</a>
+        </div>
+
+        <div class="flex items-center space-x-6">
+            <button aria-label="Search" class="hover:text-gold transition-colors">
+                <i data-lucide="search" class="w-5 h-5"></i>
+            </button>
+            <button aria-label="Cart" class="hover:text-gold transition-colors relative">
+                <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                <span class="absolute -top-2 -right-2 bg-gold text-bg text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+            </button>
+            <button id="mobile-menu-toggle" class="md:hidden text-gold">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="pt-40 pb-20 px-8 md:px-20 border-b border-border">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="clash text-6xl md:text-8xl font-black tracking-tighter uppercase">The Catalog</h1>
+            <p class="mt-6 text-cream/60 max-w-2xl text-lg">Curated premium essentials designed for high-impact branding. Filter by category or use cases to find your perfect match.</p>
+        </div>
+    </header>
+
+    <main class="flex flex-col md:flex-row min-h-screen">
+        <!-- Sidebar Filters -->
+        <aside class="w-full md:w-80 border-r border-border p-8 sticky top-24 h-fit md:h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar">
+            <div class="space-y-10">
+                <!-- Categories -->
+                <div>
+                    <h3 class="clash text-xs uppercase tracking-[0.3em] text-gold mb-6">Categories</h3>
+                    <div class="space-y-3">
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="checkbox" class="accent-gold w-4 h-4 rounded-none bg-transparent border-border">
+                            <span class="text-sm uppercase tracking-widest group-hover:text-gold transition-colors">All Products</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="checkbox" class="accent-gold w-4 h-4 rounded-none bg-transparent border-border">
+                            <span class="text-sm uppercase tracking-widest group-hover:text-gold transition-colors">Apparel</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="checkbox" class="accent-gold w-4 h-4 rounded-none bg-transparent border-border">
+                            <span class="text-sm uppercase tracking-widest group-hover:text-gold transition-colors">Drinkware</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="checkbox" class="accent-gold w-4 h-4 rounded-none bg-transparent border-border">
+                            <span class="text-sm uppercase tracking-widest group-hover:text-gold transition-colors">Tech Accessories</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="checkbox" class="accent-gold w-4 h-4 rounded-none bg-transparent border-border">
+                            <span class="text-sm uppercase tracking-widest group-hover:text-gold transition-colors">Office Essentials</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Price Range -->
+                <div>
+                    <h3 class="clash text-xs uppercase tracking-[0.3em] text-gold mb-6">Price Range</h3>
+                    <input type="range" min="0" max="1000" step="10" class="w-full accent-gold bg-border h-1 appearance-none cursor-pointer">
+                    <div class="flex justify-between mt-4 text-[10px] uppercase tracking-widest text-cream/40">
+                        <span>AED 0</span>
+                        <span>AED 1000+</span>
+                    </div>
+                </div>
+
+                <!-- Min Order -->
+                <div>
+                    <h3 class="clash text-xs uppercase tracking-[0.3em] text-gold mb-6">Minimum Order</h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button class="border border-border py-2 text-[10px] uppercase tracking-widest hover:border-gold transition-colors">No Minimum</button>
+                        <button class="border border-border py-2 text-[10px] uppercase tracking-widest hover:border-gold transition-colors">10+ Units</button>
+                        <button class="border border-border py-2 text-[10px] uppercase tracking-widest hover:border-gold transition-colors">50+ Units</button>
+                        <button class="border border-border py-2 text-[10px] uppercase tracking-widest hover:border-gold transition-colors">100+ Units</button>
+                    </div>
+                </div>
+
+                <!-- Customization -->
+                <div>
+                    <h3 class="clash text-xs uppercase tracking-[0.3em] text-gold mb-6">Customization</h3>
+                    <div class="space-y-3">
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="checkbox" class="accent-gold w-4 h-4 rounded-none bg-transparent border-border">
+                            <span class="text-sm uppercase tracking-widest group-hover:text-gold transition-colors">Embroidery</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="checkbox" class="accent-gold w-4 h-4 rounded-none bg-transparent border-border">
+                            <span class="text-sm uppercase tracking-widest group-hover:text-gold transition-colors">Screen Print</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="checkbox" class="accent-gold w-4 h-4 rounded-none bg-transparent border-border">
+                            <span class="text-sm uppercase tracking-widest group-hover:text-gold transition-colors">Laser Engraving</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Product Grid -->
+        <section id="product-section" class="flex-1 p-8 md:p-12">
+            <div class="flex justify-between items-center mb-12">
+                <p id="product-count" class="text-[10px] uppercase tracking-[0.4em] text-cream/40">Showing 0 of 0 Products</p>
+                <div class="flex items-center space-x-4">
+                    <span class="text-[10px] uppercase tracking-widest text-cream/40">Sort By:</span>
+                    <select class="bg-transparent border-none text-[10px] uppercase tracking-widest font-bold text-gold focus:ring-0 cursor-pointer">
+                        <option>Newest First</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Most Popular</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 transition-opacity duration-500">
+                <!-- Products will be injected here -->
+            </div>
+
+            <!-- Pagination -->
+            <div id="pagination-container" class="mt-20 flex justify-center items-center space-x-4">
+                <!-- Pagination buttons will be injected here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-border pt-20 pb-10 px-8 md:px-20">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+            <div class="md:col-span-1">
+                <a href="/" class="clash text-3xl font-bold text-gold tracking-tighter">AUREUM</a>
+                <p class="mt-6 text-sm text-cream/60 leading-relaxed">Elevating brand identity through premium custom merchandise and curated corporate gifting solutions in the UAE.</p>
+                <div class="mt-8 flex space-x-4">
+                    <a href="#" class="w-10 h-10 border border-border flex items-center justify-center hover:border-gold transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                    <a href="#" class="w-10 h-10 border border-border flex items-center justify-center hover:border-gold transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                    <a href="#" class="w-10 h-10 border border-border flex items-center justify-center hover:border-gold transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="clash text-xs uppercase tracking-[0.3em] text-gold mb-8">Shop</h4>
+                <ul class="space-y-4 text-sm uppercase tracking-widest">
+                    <li><a href="#" class="hover:text-gold transition-colors">All Products</a></li>
+                    <li><a href="#" class="hover:text-gold transition-colors">Apparel</a></li>
+                    <li><a href="#" class="hover:text-gold transition-colors">Drinkware</a></li>
+                    <li><a href="#" class="hover:text-gold transition-colors">Tech</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="clash text-xs uppercase tracking-[0.3em] text-gold mb-8">Company</h4>
+                <ul class="space-y-4 text-sm uppercase tracking-widest">
+                    <li><a href="/about.html" class="hover:text-gold transition-colors">About Us</a></li>
+                    <li><a href="/corporate.html" class="hover:text-gold transition-colors">Corporate Gifting</a></li>
+                    <li><a href="/contact.html" class="hover:text-gold transition-colors">Contact</a></li>
+                    <li><a href="#" class="hover:text-gold transition-colors">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="clash text-xs uppercase tracking-[0.3em] text-gold mb-8">Newsletter</h4>
+                <p class="text-xs text-cream/40 uppercase tracking-widest mb-6">Join the elite for early access & insights.</p>
+                <form class="flex">
+                    <input type="email" placeholder="EMAIL ADDRESS" class="bg-transparent border border-border px-4 py-3 text-xs w-full focus:outline-none focus:border-gold uppercase tracking-widest">
+                    <button class="bg-gold text-bg px-6 py-3 text-xs font-bold uppercase tracking-widest">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-10 border-t border-border flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-[10px] uppercase tracking-widest text-cream/40">© 2026 AUREUM CUSTOMS. ALL RIGHTS RESERVED.</p>
+            <div class="flex space-x-8 text-[10px] uppercase tracking-widest text-cream/40">
+                <a href="#" class="hover:text-gold transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-gold transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Product Data
+        const ALL_PRODUCTS = [
+            { id: 1, name: "Signature Heavy Hoodie", category: "Apparel", price: 245, image: "/images/products/product-1.jpg", badge: "Best Seller", details: "Apparel • 4 Colors" },
+            { id: 2, name: "Onyx Insulated Flask", category: "Drinkware", price: 120, image: "/images/products/product-2.jpg", badge: "", details: "Drinkware • 500ml" },
+            { id: 3, name: "Artisan Leather Journal", category: "Office", price: 85, image: "/images/products/product-3.jpg", badge: "New Arrival", details: "Office • A5 Size" },
+            { id: 4, name: "Slate Wireless Charger", category: "Tech", price: 180, image: "/images/products/product-4.jpg", badge: "", details: "Tech • 15W Fast Charge" },
+            { id: 5, name: "Nomad Canvas Weekender", category: "Travel", price: 320, image: "/images/products/product-5.jpg", badge: "", details: "Travel • Heavy Duty" },
+            { id: 6, name: "Structured Twill Cap", category: "Apparel", price: 95, image: "/images/products/product-6.jpg", badge: "", details: "Apparel • Adjustable" },
+            { id: 7, name: "Premium Polo Shirt", category: "Apparel", price: 165, image: "/images/products/product-7.jpg", badge: "", details: "Apparel • Pique Cotton" },
+            { id: 8, name: "Titanium Key Organizer", category: "Tech", price: 110, image: "/images/products/product-8.jpg", badge: "", details: "Tech • Minimalist" },
+            { id: 9, name: "Ceramic Coffee Mug", category: "Drinkware", price: 45, image: "/images/products/product-9.jpg", badge: "", details: "Drinkware • 350ml" },
+            { id: 10, name: "Executive Desk Pad", category: "Office", price: 140, image: "/images/products/product-10.jpg", badge: "", details: "Office • Vegan Leather" },
+            { id: 11, name: "Bluetooth ANC Headphones", category: "Tech", price: 550, image: "/images/products/product-11.jpg", badge: "Premium", details: "Tech • Noise Cancelling" },
+            { id: 12, name: "Eco-Friendly Tote Bag", category: "Travel", price: 35, image: "/images/products/product-12.jpg", badge: "", details: "Travel • Recycled Cotton" },
+            { id: 13, name: "Minimalist Card Holder", category: "Office", price: 75, image: "/images/products/product-13.jpg", badge: "", details: "Office • RFID Blocking" },
+            { id: 14, name: "Smart Water Bottle", category: "Drinkware", price: 195, image: "/images/products/product-14.jpg", badge: "", details: "Drinkware • LED Temp Display" },
+            { id: 15, name: "Technical Windbreaker", category: "Apparel", price: 295, image: "/images/products/product-15.jpg", badge: "", details: "Apparel • Water Resistant" },
+            { id: 16, name: "Portable Power Bank", category: "Tech", price: 150, image: "/images/products/product-16.jpg", badge: "", details: "Tech • 20000mAh" },
+            { id: 17, name: "Bamboo Desk Organizer", category: "Office", price: 90, image: "/images/products/product-17.jpg", badge: "", details: "Office • Sustainable" },
+            { id: 18, name: "Merino Wool Beanie", category: "Apparel", price: 115, image: "/images/products/product-18.jpg", badge: "", details: "Apparel • Winter Essential" },
+            { id: 19, name: "Leather Laptop Sleeve", category: "Tech", price: 210, image: "/images/products/product-19.jpg", badge: "", details: "Tech • 14-inch" },
+            { id: 20, name: "Glass Infuser Bottle", category: "Drinkware", price: 130, image: "/images/products/product-20.jpg", badge: "", details: "Drinkware • Borosilicate" },
+            { id: 21, name: "Premium Yoga Mat", category: "Lifestyle", price: 185, image: "/images/products/product-21.jpg", badge: "", details: "Lifestyle • Non-slip" },
+            { id: 22, name: "Stainless Steel Straw Set", category: "Drinkware", price: 25, image: "/images/products/product-22.jpg", badge: "", details: "Drinkware • Reusable" },
+            { id: 23, name: "Canvas Messenger Bag", category: "Travel", price: 260, image: "/images/products/product-23.jpg", badge: "", details: "Travel • Multi-pocket" },
+            { id: 24, name: "Noise Isolating Earbuds", category: "Tech", price: 85, image: "/images/products/product-24.jpg", badge: "", details: "Tech • Wired" },
+            { id: 25, name: "Customized Umbrella", category: "Lifestyle", price: 95, image: "/images/products/product-25.jpg", badge: "", details: "Lifestyle • Windproof" },
+            { id: 26, name: "Luxury Pen Set", category: "Office", price: 120, image: "/images/products/product-26.jpg", badge: "", details: "Office • Rollerball" },
+            { id: 27, name: "Gym Duffel Bag", category: "Travel", price: 190, image: "/images/products/product-27.jpg", badge: "", details: "Travel • Shoe Compartment" },
+            { id: 28, name: "Adjustable Laptop Stand", category: "Tech", price: 145, image: "/images/products/product-28.jpg", badge: "", details: "Tech • Aluminum" },
+            { id: 29, name: "Aromatic Candle Set", category: "Lifestyle", price: 70, image: "/images/products/product-29.jpg", badge: "", details: "Lifestyle • Soy Wax" },
+            { id: 30, name: "Microfiber Sports Towel", category: "Lifestyle", price: 40, image: "/images/products/product-30.jpg", badge: "", details: "Lifestyle • Quick Dry" },
+            { id: 31, name: "Premium Leather Belt", category: "Apparel", price: 155, image: "/images/products/product-31.jpg", badge: "", details: "Apparel • Full Grain" },
+            { id: 32, name: "Desktop Humidifier", category: "Office", price: 110, image: "/images/products/product-32.jpg", badge: "", details: "Office • USB Powered" },
+            { id: 33, name: "Wireless Mouse Pad", category: "Tech", price: 130, image: "/images/products/product-33.jpg", badge: "", details: "Tech • Built-in Charger" },
+            { id: 34, name: "Enamel Pin Collection", category: "Lifestyle", price: 15, image: "/images/products/product-34.jpg", badge: "", details: "Lifestyle • Custom Shapes" },
+            { id: 35, name: "Fleece Quarter Zip", category: "Apparel", price: 210, image: "/images/products/product-35.jpg", badge: "", details: "Apparel • Soft Touch" },
+            { id: 36, name: "Ceramic Planter", category: "Office", price: 65, image: "/images/products/product-36.jpg", badge: "", details: "Office • Minimalist" },
+            { id: 37, name: "Travel Adapter Kit", category: "Travel", price: 125, image: "/images/products/product-37.jpg", badge: "", details: "Travel • Universal" },
+            { id: 38, name: "Suede Cap", category: "Apparel", price: 135, image: "/images/products/product-38.jpg", badge: "", details: "Apparel • Premium Finish" },
+            { id: 39, name: "Copper Vacuum Tumbler", category: "Drinkware", price: 115, image: "/images/products/product-39.jpg", badge: "", details: "Drinkware • 400ml" },
+            { id: 40, name: "Silicone Phone Case", category: "Tech", price: 55, image: "/images/products/product-40.jpg", badge: "", details: "Tech • Soft Grip" },
+            { id: 41, name: "Linen Apron", category: "Lifestyle", price: 145, image: "/images/products/product-41.jpg", badge: "", details: "Lifestyle • Professional" },
+            { id: 42, name: "Graphite Pencil Set", category: "Office", price: 30, image: "/images/products/product-42.jpg", badge: "", details: "Office • Sketching" },
+            { id: 43, name: "Insulated Lunch Bag", category: "Travel", price: 85, image: "/images/products/product-43.jpg", badge: "", details: "Travel • Leakproof" },
+            { id: 44, name: "Velvet Cushion Cover", category: "Lifestyle", price: 60, image: "/images/products/product-44.jpg", badge: "", details: "Lifestyle • Home Decor" },
+            { id: 45, name: "Gold-Plated Cufflinks", category: "Apparel", price: 280, image: "/images/products/product-45.jpg", badge: "Limited", details: "Apparel • Executive" }
+        ];
+
+        // Pagination State
+        let currentPage = 1;
+        const ITEMS_PER_PAGE = 9;
+        const TOTAL_PAGES = Math.ceil(ALL_PRODUCTS.length / ITEMS_PER_PAGE);
+
+        // DOM Elements
+        const productGrid = document.getElementById('product-grid');
+        const paginationContainer = document.getElementById('pagination-container');
+        const productCount = document.getElementById('product-count');
+
+        function renderProducts(page) {
+            // Fade out
+            productGrid.style.opacity = '0';
+            
+            setTimeout(() => {
+                const start = (page - 1) * ITEMS_PER_PAGE;
+                const end = start + ITEMS_PER_PAGE;
+                const paginatedProducts = ALL_PRODUCTS.slice(start, end);
+
+                productGrid.innerHTML = paginatedProducts.map(product => `
+                    <div class="product-card group cursor-pointer" onclick="window.location.href='/product-detail.html'">
+                        <div class="relative aspect-[4/5] overflow-hidden bg-surface border border-border">
+                            <img src="${product.image}" alt="${product.name}" class="product-image w-full h-full object-cover transition-transform duration-700">
+                            ${product.badge ? `<div class="absolute top-4 left-4 bg-gold text-bg text-[10px] font-bold px-3 py-1 uppercase tracking-widest">${product.badge}</div>` : ''}
+                            <div class="quick-add absolute inset-x-4 bottom-4 opacity-0 translate-y-4 transition-all duration-300">
+                                <button class="w-full bg-cream text-bg py-4 text-[10px] font-bold uppercase tracking-widest hover:bg-gold transition-colors">Quick Customize</button>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex justify-between items-start">
+                            <div>
+                                <h3 class="clash text-lg font-bold uppercase tracking-tight group-hover:text-gold transition-colors">${product.name}</h3>
+                                <p class="text-xs text-cream/40 uppercase tracking-widest mt-1">${product.details}</p>
+                            </div>
+                            <p class="clash text-lg font-bold text-gold">AED ${product.price}</p>
+                        </div>
+                    </div>
+                `).join('');
+
+                // Update count text
+                const currentEnd = Math.min(end, ALL_PRODUCTS.length);
+                productCount.textContent = `Showing ${start + 1}–${currentEnd} of ${ALL_PRODUCTS.length} Products`;
+
+                // Fade in
+                productGrid.style.opacity = '1';
+                
+                // Scroll to top of grid
+                document.getElementById('product-section').scrollIntoView({ behavior: 'smooth' });
+            }, 300);
+        }
+
+        function renderPagination() {
+            let html = '';
+
+            // Prev Button
+            html += `
+                <button onclick="changePage(${currentPage - 1})" class="w-12 h-12 border border-border flex items-center justify-center hover:border-gold transition-colors disabled:opacity-20" ${currentPage === 1 ? 'disabled' : ''}>
+                    <i data-lucide="chevron-left"></i>
+                </button>
+            `;
+
+            // Page Numbers
+            for (let i = 1; i <= TOTAL_PAGES; i++) {
+                if (i === currentPage) {
+                    html += `<button class="w-12 h-12 border border-gold bg-gold text-bg flex items-center justify-center font-bold">${i}</button>`;
+                } else {
+                    html += `<button onclick="changePage(${i})" class="w-12 h-12 border border-border flex items-center justify-center hover:border-gold transition-colors">${i}</button>`;
+                }
+            }
+
+            // Next Button
+            html += `
+                <button onclick="changePage(${currentPage + 1})" class="w-12 h-12 border border-border flex items-center justify-center hover:border-gold transition-colors disabled:opacity-20" ${currentPage === TOTAL_PAGES ? 'disabled' : ''}>
+                    <i data-lucide="chevron-right"></i>
+                </button>
+            `;
+
+            paginationContainer.innerHTML = html;
+            lucide.createIcons();
+        }
+
+        window.changePage = function(page) {
+            if (page < 1 || page > TOTAL_PAGES) return;
+            currentPage = page;
+            renderProducts(currentPage);
+            renderPagination();
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            renderProducts(currentPage);
+            renderPagination();
+        });
+
+        // Simple Filter Logic Placeholder
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', () => {
+                console.log('Filter changed');
+            });
+        });
+    </script>
+</body>
+</html>

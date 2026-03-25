@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Heavyweight Hoodie | AUREUM</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @theme {
+            --color-gold: #C9A84C;
+            --color-bg: #0A0A0A;
+            --color-surface: #141414;
+            --color-border: #2A2A2A;
+            --font-display: 'Clash Display', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
+        body { background-color: #0A0A0A; color: #F5F0E8; font-family: 'DM Sans', sans-serif; }
+        .clash { font-family: 'Clash Display', sans-serif; }
+        .nav-blur { backdrop-filter: blur(12px); background-color: rgba(10, 10, 10, 0.8); }
+        .zoom-container { overflow: hidden; }
+        .zoom-image { transition: transform 0.5s ease; }
+        .zoom-container:hover .zoom-image { transform: scale(1.2); }
+        .tab-active { border-bottom: 2px solid #C9A84C; color: #C9A84C; }
+    </style>
+</head>
+<body class="pt-24">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 nav-blur py-4 px-8 flex items-center justify-between border-b border-border">
+        <a href="/" class="clash text-2xl font-bold text-gold tracking-tighter">AUREUM</a>
+        <div class="hidden md:flex items-center space-x-12">
+            <a href="/catalog.html" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Products</a>
+            <a href="#" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Create</a>
+            <a href="/corporate.html" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Corporate</a>
+            <a href="/about.html" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">About</a>
+            <a href="/contact.html" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Contact</a>
+        </div>
+        <button class="bg-gold text-bg px-6 py-2 text-sm font-bold uppercase tracking-widest">Get a Quote</button>
+    </nav>
+
+    <div class="px-8 md:px-20 py-12">
+        <div class="flex flex-col lg:flex-row gap-16">
+            <!-- Left Panel: Product Preview -->
+            <div class="w-full lg:w-1/2 space-y-6">
+                <div class="relative zoom-container aspect-square bg-surface border border-border">
+                    <img id="main-product-image" src="/images/products/product-1.jpg" alt="Product" class="zoom-image w-full h-full object-cover">
+                    <div class="absolute top-4 right-4 bg-bg/80 border border-gold text-gold text-[10px] font-bold uppercase px-3 py-1">360° View</div>
+                </div>
+                <div class="flex space-x-4 overflow-x-auto pb-2">
+                    <button onclick="changeImage(this.src)" class="w-24 h-24 shrink-0 border border-gold bg-surface">
+                        <img src="/images/products/product-1.jpg" class="w-full h-full object-cover">
+                    </button>
+                    <button onclick="changeImage(this.src)" class="w-24 h-24 shrink-0 border border-border hover:border-gold bg-surface">
+                        <img src="/images/products/product-1-back.jpg" class="w-full h-full object-cover">
+                    </button>
+                    <button onclick="changeImage(this.src)" class="w-24 h-24 shrink-0 border border-border hover:border-gold bg-surface">
+                        <img src="/images/products/product-1-side.jpg" class="w-full h-full object-cover">
+                    </button>
+                    <button onclick="changeImage(this.src)" class="w-24 h-24 shrink-0 border border-border hover:border-gold bg-surface">
+                        <img src="/images/products/product-1-detail.jpg" class="w-full h-full object-cover">
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Panel: Configuration -->
+            <div class="w-full lg:w-1/2 space-y-10">
+                <div>
+                    <h1 class="clash text-4xl md:text-5xl font-bold mb-4">Premium Heavyweight Hoodie</h1>
+                    <p class="text-muted leading-relaxed">Our signature ultra-soft heavyweight fleece hoodie, designed for durability and a premium retail feel. Perfect for high-end brand merchandise.</p>
+                </div>
+
+                <div class="flex items-center justify-between border-y border-border py-6">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-muted block mb-1">Starting From</span>
+                        <span class="clash text-3xl font-bold text-gold">AED 125 <span class="text-sm font-normal text-muted">/ unit</span></span>
+                    </div>
+                    <button onclick="toggleBulkPricing()" class="text-xs uppercase tracking-widest text-gold border-b border-gold">View Bulk Pricing</button>
+                </div>
+
+                <!-- Bulk Pricing Table (Hidden by default) -->
+                <div id="bulk-pricing" class="hidden bg-surface p-6 border border-border">
+                    <table class="w-full text-xs uppercase tracking-widest">
+                        <thead>
+                            <tr class="text-muted border-b border-border">
+                                <th class="text-left pb-4">Quantity</th>
+                                <th class="text-right pb-4">Price / Unit</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-border">
+                            <tr><td class="py-4">1 - 10</td><td class="text-right py-4">AED 125</td></tr>
+                            <tr><td class="py-4">11 - 50</td><td class="text-right py-4">AED 110</td></tr>
+                            <tr><td class="py-4">51 - 100</td><td class="text-right py-4">AED 95</td></tr>
+                            <tr><td class="py-4">100+</td><td class="text-right py-4">AED 80</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <label class="text-xs uppercase tracking-widest text-muted block mb-4">Color</label>
+                        <div class="flex space-x-3">
+                            <button class="w-8 h-8 rounded-full bg-black border-2 border-gold ring-2 ring-gold/20"></button>
+                            <button class="w-8 h-8 rounded-full bg-gray-800 border border-border hover:border-gold"></button>
+                            <button class="w-8 h-8 rounded-full bg-white border border-border hover:border-gold"></button>
+                            <button class="w-8 h-8 rounded-full bg-blue-900 border border-border hover:border-gold"></button>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="text-xs uppercase tracking-widest text-muted block mb-4">Quantity</label>
+                        <div class="flex items-center border border-border w-fit">
+                            <button class="px-4 py-2 hover:bg-surface">-</button>
+                            <input type="number" value="1" class="w-12 bg-transparent text-center text-sm outline-none">
+                            <button class="px-4 py-2 hover:bg-surface">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="text-xs uppercase tracking-widest text-muted block mb-4">Size</label>
+                    <div class="flex flex-wrap gap-3">
+                        <button class="px-6 py-2 border border-border text-xs uppercase tracking-widest hover:border-gold">S</button>
+                        <button class="px-6 py-2 border border-gold text-gold text-xs uppercase tracking-widest">M</button>
+                        <button class="px-6 py-2 border border-border text-xs uppercase tracking-widest hover:border-gold">L</button>
+                        <button class="px-6 py-2 border border-border text-xs uppercase tracking-widest hover:border-gold">XL</button>
+                        <button class="px-6 py-2 border border-border text-xs uppercase tracking-widest hover:border-gold">XXL</button>
+                    </div>
+                </div>
+
+                <!-- Customization Section -->
+                <div class="space-y-8 pt-8 border-t border-border">
+                    <h3 class="clash text-xl">Customization</h3>
+                    
+                    <div>
+                        <label class="text-xs uppercase tracking-widest text-muted block mb-4">Upload Logo</label>
+                        <div class="border-2 border-dashed border-border p-10 text-center hover:border-gold transition-colors cursor-pointer group">
+                            <i data-lucide="upload-cloud" class="w-8 h-8 mx-auto mb-4 text-muted group-hover:text-gold"></i>
+                            <p class="text-xs uppercase tracking-widest text-muted">Drag & Drop or <span class="text-gold">Browse</span></p>
+                            <p class="text-[10px] text-muted/50 mt-2">PNG, SVG, AI (Max 10MB)</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="text-xs uppercase tracking-widest text-muted block mb-4">Print Location</label>
+                            <select class="w-full bg-surface border border-border p-3 text-xs uppercase tracking-widest focus:border-gold outline-none">
+                                <option>Front Center</option>
+                                <option>Back Center</option>
+                                <option>Left Chest</option>
+                                <option>Right Sleeve</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="text-xs uppercase tracking-widest text-muted block mb-4">Print Type</label>
+                            <div class="flex border border-border">
+                                <button class="flex-1 py-3 text-[10px] uppercase tracking-widest bg-gold text-bg font-bold">Screen Print</button>
+                                <button class="flex-1 py-3 text-[10px] uppercase tracking-widest hover:bg-surface">Embroidery</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="text-xs uppercase tracking-widest text-muted block mb-4">Add Custom Text</label>
+                        <input type="text" placeholder="Type your text here..." class="w-full bg-surface border border-border p-3 text-sm outline-none focus:border-gold">
+                    </div>
+                </div>
+
+                <div class="space-y-4 pt-10">
+                    <div class="flex justify-between items-end mb-4">
+                        <span class="text-xs uppercase tracking-widest text-muted">Estimated Total</span>
+                        <span class="clash text-4xl font-bold text-gold">AED 125</span>
+                    </div>
+                    <button class="w-full bg-gold text-bg py-5 text-sm font-bold uppercase tracking-widest sharp-edges hover:bg-gold-light transition-colors">Add to Cart</button>
+                    <button class="w-full border border-cream py-5 text-sm font-bold uppercase tracking-widest sharp-edges hover:bg-cream hover:text-bg transition-all">Request Bulk Quote</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Below Fold: Tabs -->
+        <div class="mt-32">
+            <div class="flex border-b border-border space-x-12 mb-12">
+                <button class="pb-4 text-xs uppercase tracking-widest font-bold tab-active">Description</button>
+                <button class="pb-4 text-xs uppercase tracking-widest font-bold text-muted hover:text-gold transition-colors">Customization Guide</button>
+                <button class="pb-4 text-xs uppercase tracking-widest font-bold text-muted hover:text-gold transition-colors">Shipping</button>
+                <button class="pb-4 text-xs uppercase tracking-widest font-bold text-muted hover:text-gold transition-colors">Reviews (12)</button>
+            </div>
+            <div class="max-w-3xl space-y-6 text-muted leading-relaxed">
+                <p>Crafted from a blend of 80% cotton and 20% polyester, our Premium Heavyweight Hoodie is designed for those who demand quality. The 400GSM fabric provides a substantial feel and exceptional warmth, while the brushed interior ensures maximum comfort.</p>
+                <ul class="list-disc list-inside space-y-2 text-sm">
+                    <li>400 GSM Heavyweight Fleece</li>
+                    <li>Double-lined hood with matching drawstrings</li>
+                    <li>Reinforced stitching at stress points</li>
+                    <li>Pouch pocket with reinforced seams</li>
+                    <li>Pre-shrunk to minimize shrinkage</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Related Products -->
+        <div class="mt-32">
+            <h2 class="clash text-3xl mb-12">You May Also Like</h2>
+            <div class="flex space-x-8 overflow-x-auto pb-8">
+                <div class="w-72 shrink-0 group">
+                    <div class="aspect-[3/4] bg-surface border border-border overflow-hidden mb-6">
+                        <img src="/images/products/product-2.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h4 class="clash text-lg font-bold">Classic Crewneck</h4>
+                    <p class="text-xs text-muted uppercase tracking-widest">From AED 95</p>
+                </div>
+                <div class="w-72 shrink-0 group">
+                    <div class="aspect-[3/4] bg-surface border border-border overflow-hidden mb-6">
+                        <img src="/images/products/product-3.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h4 class="clash text-lg font-bold">Premium Joggers</h4>
+                    <p class="text-xs text-muted uppercase tracking-widest">From AED 110</p>
+                </div>
+                <div class="w-72 shrink-0 group">
+                    <div class="aspect-[3/4] bg-surface border border-border overflow-hidden mb-6">
+                        <img src="/images/products/product-4.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h4 class="clash text-lg font-bold">Branded Beanie</h4>
+                    <p class="text-xs text-muted uppercase tracking-widest">From AED 35</p>
+                </div>
+                <div class="w-72 shrink-0 group">
+                    <div class="aspect-[3/4] bg-surface border border-border overflow-hidden mb-6">
+                        <img src="/images/products/product-5.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h4 class="clash text-lg font-bold">Canvas Backpack</h4>
+                    <p class="text-xs text-muted uppercase tracking-widest">From AED 150</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        function changeImage(src) {
+            document.getElementById('main-product-image').src = src;
+        }
+        function toggleBulkPricing() {
+            const el = document.getElementById('bulk-pricing');
+            el.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
